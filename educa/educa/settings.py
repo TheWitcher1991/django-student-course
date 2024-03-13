@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'students.apps.StudentsConfig',
     'embed_video',
     'debug_toolbar',
-    'redisboard'
+    'redisboard',
+    'braces',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -75,6 +77,12 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 WSGI_APPLICATION = "educa.wsgi.application"
 
