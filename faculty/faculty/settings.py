@@ -24,11 +24,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'students.apps.StudentsConfig',
+    'chat.apps.ChatConfig',
     'embed_video',
     'debug_toolbar',
     'redisboard',
-    'braces',
-    'rest_framework'
+    'rest_framework',
+    'channels'
 ]
 
 MIDDLEWARE = [
@@ -45,6 +46,17 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "faculty.urls"
+
+ASGI_APPLICATION = 'faculty.asgi.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379)],
+        },
+    },
+}
 
 TEMPLATES = [
     {

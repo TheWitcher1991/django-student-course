@@ -12,7 +12,7 @@ from django.core.cache import cache
 from .models import Course, Module, Content, Subject
 from .mixins import OwnerEditMixin, OwnerCourseMixin
 from .forms import ModuleFormSet
-from ..students.forms import CourseEnrollForm
+from students.forms import CourseEnrollForm
 
 
 class OwnerCourseEditMixin(OwnerCourseMixin, OwnerEditMixin):
