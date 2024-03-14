@@ -6,7 +6,7 @@ from rest_framework import viewsets
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import action
-from ..courses.models import Subject, Course
+from courses.models import Subject, Course
 from .serializers import SubjectSerializer, CourseSerializer, CourseWithContentsSerializer
 from .permissions import IsEnrolled
 
